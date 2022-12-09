@@ -33,6 +33,11 @@ jobs:
       run: mvn -B -DskipTests package --file pom.xml
     - name: HTML
       run: sh make_html.sh target/biblio-0.1.jar
+    - uses: JamesIves/github-pages-deploy-action@v4
+      with :
+        folder : wwwroot/
+        branch : meshtml
+    
     
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
